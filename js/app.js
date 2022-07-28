@@ -134,10 +134,13 @@ function printGrid(num1, num2) {
         gridRow = gridRow.join(" ");
         grid.push(gridRow);
     }
+    for (let k = 0; k < grid.length; k += 2) {
+        grid[k] = " " + grid[k];
+    }
     grid = grid.join("\n");
     return grid;
 }
-console.log(printGrid(8,8));
+console.log(printGrid(24,24));
 // 7. Modify it to make any size grid.
 // When you have a function that generates this pattern, modify it to take a parameter size. Make the function work for any size, outputting a properly formatted grid of the given width and height. If it helps you to have this set. The very first square should always be white.
 
