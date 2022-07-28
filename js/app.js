@@ -79,15 +79,15 @@ function checkPandigital(num) {
     }
     console.log("The numIntArray is",numIntArray);
     let numArraySorted = numIntArray.sort();
-    console.log("The numArraySorted is",numArraySorted);
+    console.log("The numArraySorted is",numArraySorted,"and its type is",typeof(numArraySorted));
     // generate an array of what the ideal pandigital number would contain
     let numPanIdeal = [];
     for (let i = 1; i <= numLength; i++) {
         numPanIdeal.push(i);
     }
-    console.log("The numPanIdeal is ",numPanIdeal);
+    console.log("The numPanIdeal is ",numPanIdeal,"and its type is",typeof(numPanIdeal));
     // check if the actual array matches the ideal array
-    if (numArraySorted === numPanIdeal) {
+    if (numArraySorted.length === numPanIdeal.length && numArraySorted.every((val, index) => val === numPanIdeal[index])) {
         return true;
     } else {
         return false;
