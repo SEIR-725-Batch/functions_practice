@@ -125,25 +125,16 @@ console.log(checkPandigital(54321));
 function printGrid(num1, num2) {
     let gridWidth = num1;
     let gridHeight = num2;
-    let grid = []; // when i is 0 j is 0, j goes 0 to 7 but i stays 0
-    // // tried making the grid before making rows. Going to reverse below
-    // for (let i = 0; i < gridHeight; i++) {
-        //     grid.push(gridRow[i]);
-        //     for (let i = 0; i < gridWidth; i++) {
-            //         gridRow.push("#"); //this should create an array of hashtags the same length as gridWidth
-            //     }
-            // }
-            // try making rows first
-    for (let i = 0; i < gridWidth; i++) {
+    let grid = [];
+    for (let i = 0; i < gridWidth; i++) { // this function creates grid rows by pushing #'s into an array, then pushing that array into the grid ONE AT A TIME
         let gridRow = [];
         for (let j = 0; j < gridHeight; j++) {
-            gridRow.push("#"); //this should create an array of hashtags the same length as gridWidth
+            gridRow.push("#");
         }
+        gridRow = gridRow.join(" ");
         grid.push(gridRow);
     }
-    // for (let i= 0; i < gridHeight; i++) {
-    //     grid.push(gridRow[i]);
-    // }
+    grid = grid.join("\n");
     return grid;
 }
 console.log(printGrid(8,8));
