@@ -155,3 +155,25 @@ console.log(printGrid(24,24));
 
 // Details
 // Hint: use `typeof`
+function calculate2(num1, num2, operation) {
+    switch(typeof(num2)) {
+        case "string":
+            if (num2 === "sqrt") return num1 ** (1/2);
+        default:
+            switch(operation) {
+            case "add":
+                return num1 + num2;
+            case "sub":
+                return num1 - num2;
+            case "mult":
+                return num1 * num2;
+            case "div":
+                return num1 / num2;
+            case "exp":
+                return num1 ** num2;
+            default:
+                return "ERROR: Expected one of these operations as string in third parameter: add, sub, mult, div, exp";
+            }
+    }
+}
+console.log(calculate2(9,"sqrt"));
