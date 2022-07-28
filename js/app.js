@@ -57,19 +57,45 @@ function calculate(num1, num2, operation) {
 console.log(calculate(1,5,"e"));
 // 4. pandigital numbers
 // Note: The following question is weird, we know. In interviews, you will absolutely be given coding challenges with "weird" questions and you'll need to be very careful when reading these types of questions to make sure you understand what you're being asked to do.
-
 // A number of length n is 1-to-n pandigital if it makes use of all the digits 1 to n exactly once.
-
 // The number 15234 is 1-to-n pandigital because it is 5 numbers long and includes 1, 2, 3, 4, and 5.
-
 // The number 333 is not 1-to-n pandigital.
-
 // The number 0 is not 1-to-n pandigital.
-
 // The number 987654321 is 1-to-n pandigital.
-
 // Write a function that checks if a number is 1-to-n pandigital.
 
+// SELF: the length of the number must be equal to the highest number and use from 1 to that number. The highest possible number is 987654321 and the lowest possible number is 1.
+function checkPandigital(num) {
+    // get the length of the number by parsing it as a string
+    let numString = num.toString();
+    console.log("The numString is",numString);
+    let numLength = numString.length;
+    // parse the string into an array, change strings to ints, then sort
+    let numArray = numString.split("");
+    console.log("The numArray is",numArray);
+    let numIntArray = [];
+    for (let i = 0; i < numArray.length; i++) {
+        numIntArray.push(parseInt(numArray[i]));
+    }
+    console.log("The numIntArray is",numIntArray);
+    let numArraySorted = numIntArray.sort();
+    console.log("The numArraySorted is",numArraySorted);
+    // generate an array of what the ideal pandigital number would contain
+    let numPanIdeal = [];
+    for (let i = 1; i <= numLength; i++) {
+        numPanIdeal.push(i);
+    }
+    console.log("The numPanIdeal is ",numPanIdeal);
+    // check if the actual array matches the ideal array
+    if (numArraySorted === numPanIdeal) {
+        return true;
+    } else {
+        return false;
+    }
+}
+//expected return is true for both
+console.log(checkPandigital(1234));
+console.log(checkPandigital(54321));
 // 5. printGreeting v2.0
 // There is a very rudimentary JavaScript function for receiving user input called prompt().
 
