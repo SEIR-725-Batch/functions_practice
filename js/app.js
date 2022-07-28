@@ -105,17 +105,15 @@ console.log(checkPandigital(54321));
 // Let's revisit printGreeting.
 // First get the userInput as above. Then write a function called printGreeting2 with a parameter name that returns a greeting with the argument interpolated into the greeting as before, but this time use the alert function to display the greeting to the user.
 // Hungry for more?
-const userInput = prompt("Please enter some input");
-function printGreeting2(name) {
-    alert(`Hello there ${name}`);
-}
-console.log(printGreeting2(userInput));
+// const userInput = prompt("Please enter some input");
+// function printGreeting2(name) {
+//     alert(`Hello there ${name}`);
+// }
+// console.log(printGreeting2(userInput));
 
 // 6. Functions + loops: a special partnership
 // Write a function that, when called ("call" = "invoke") creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space (a "white square") or a # character (representing a black square). Hence, the characters should form a chessboard.
-
 // Calling your function should print something like this:
-
 //  # # # #
 // # # # # 
 //  # # # #
@@ -124,6 +122,31 @@ console.log(printGreeting2(userInput));
 // # # # # 
 //  # # # #
 // # # # #
+function printGrid(num1, num2) {
+    let gridWidth = num1;
+    let gridHeight = num2;
+    let grid = []; // when i is 0 j is 0, j goes 0 to 7 but i stays 0
+    // // tried making the grid before making rows. Going to reverse below
+    // for (let i = 0; i < gridHeight; i++) {
+        //     grid.push(gridRow[i]);
+        //     for (let i = 0; i < gridWidth; i++) {
+            //         gridRow.push("#"); //this should create an array of hashtags the same length as gridWidth
+            //     }
+            // }
+            // try making rows first
+    for (let i = 0; i < gridWidth; i++) {
+        let gridRow = [];
+        for (let j = 0; j < gridHeight; j++) {
+            gridRow.push("#"); //this should create an array of hashtags the same length as gridWidth
+        }
+        grid.push(gridRow);
+    }
+    // for (let i= 0; i < gridHeight; i++) {
+    //     grid.push(gridRow[i]);
+    // }
+    return grid;
+}
+console.log(printGrid(8,8));
 // 7. Modify it to make any size grid.
 // When you have a function that generates this pattern, modify it to take a parameter size. Make the function work for any size, outputting a properly formatted grid of the given width and height. If it helps you to have this set. The very first square should always be white.
 
