@@ -98,19 +98,19 @@ console.log(checkPandigital(1234));
 console.log(checkPandigital(54321));
 // 5. printGreeting v2.0
 // There is a very rudimentary JavaScript function for receiving user input called prompt().
-
 // Usage:
-
 // 	const userInput = prompt("Please enter some input");
 // userInput is now whatever the user entered.
-
 // There is another rudimentary JavaScript function for displaying text called alert(). You probably have heard of it. It takes a string as a parameter. Read about it on mdn.
-
 // Let's revisit printGreeting.
-
 // First get the userInput as above. Then write a function called printGreeting2 with a parameter name that returns a greeting with the argument interpolated into the greeting as before, but this time use the alert function to display the greeting to the user.
-
 // Hungry for more?
+const userInput = prompt("Please enter some input");
+function printGreeting2(name) {
+    alert(`Hello there ${name}`);
+}
+console.log(printGreeting2(userInput));
+
 // 6. Functions + loops: a special partnership
 // Write a function that, when called ("call" = "invoke") creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space (a "white square") or a # character (representing a black square). Hence, the characters should form a chessboard.
 
