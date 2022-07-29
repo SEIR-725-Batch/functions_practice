@@ -41,3 +41,11 @@ function checkPandigital(num) {
 
 
 //console.log(checkPandigital(7531642))
+
+//Problem 5
+const userInput = prompt("Please enter your name");
+function printGreeting2(name) {
+    name = userInput;
+    alert(`Hello, there ${name}.`);
+}
+//console.log(printGreeting2())
